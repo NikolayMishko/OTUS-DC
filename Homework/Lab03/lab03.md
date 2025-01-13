@@ -6,7 +6,7 @@
 
 ## Выполнение
 ### Схема сети
-![alt text](images/lab02_ISIS.png)
+![alt text](images/lab02ISIS.png)
 
 
 ### План работ
