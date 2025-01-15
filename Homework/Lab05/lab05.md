@@ -25,14 +25,14 @@
     - назначение source ip = Lo1 ip
     - маппинг VNI - VLAN
 - #### Конфигурация EVPN
-    - конфигурация address-family SP_OVERLAY evpn
+    - конфигурация address-family evpn
      - настройка RT , RD
-    - активация address-family SP_OVERLAY evpn для peer group      
+    - активация address-family evpn для peer group SP_OVERLAY     
 
 ### План работ (на spine)
 - #### Конфигурация EVPN
-    - конфигурация address-family L_OVERLAY evpn
-    - активация address-family L_OVERLAY evpn для peer group  
+    - конфигурация address-family evpn
+    - активация address-family evpn для peer group L_OVERLAY 
 
 ### План работ (на клиентах)
 - #### настройка Ip addr на интерфейсе подключения
