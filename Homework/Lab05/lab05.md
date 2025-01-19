@@ -52,6 +52,7 @@ interface Ethernet1
    mtu 9214
    no switchport
    ip address 10.11.101.2/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -61,6 +62,7 @@ interface Ethernet2
    mtu 9214
    no switchport
    ip address 10.11.101.4/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -70,6 +72,7 @@ interface Ethernet3
    mtu 9214
    no switchport
    ip address 10.11.101.6/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -96,6 +99,7 @@ router bgp 65001
    neighbor L_OVERLAY peer group
    neighbor L_OVERLAY next-hop-unchanged
    neighbor L_OVERLAY update-source Loopback1
+   neighbor L_OVERLAY bfd
    neighbor L_OVERLAY ebgp-multihop 3
    neighbor L_OVERLAY send-community extended
    neighbor 10.11.101.0 peer group L_OVERLAY
@@ -128,6 +132,7 @@ interface Ethernet1
    mtu 9214
    no switchport
    ip address 10.11.102.2/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -137,6 +142,7 @@ interface Ethernet2
    mtu 9214
    no switchport
    ip address 10.11.102.4/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -146,6 +152,7 @@ interface Ethernet3
    mtu 9214
    no switchport
    ip address 10.11.102.6/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -171,6 +178,7 @@ router bgp 65001
    neighbor L_OVERLAY peer group
    neighbor L_OVERLAY next-hop-unchanged
    neighbor L_OVERLAY update-source Loopback1
+   neighbor SP_OVERLAY bfd
    neighbor L_OVERLAY ebgp-multihop 3
    neighbor L_OVERLAY send-community extended
    neighbor 10.11.101.0 peer group L_OVERLAY
@@ -211,6 +219,7 @@ interface Ethernet7
    mtu 9214
    no switchport
    ip address 10.11.101.3/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -220,6 +229,7 @@ interface Ethernet8
    mtu 9214
    no switchport
    ip address 10.11.102.3/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -249,6 +259,7 @@ router bgp 65101
    maximum-paths 4 ecmp 64
    neighbor SP_OVERLAY peer group
    neighbor SP_OVERLAY update-source Loopback1
+   neighbor SP_OVERLAY bfd
    neighbor SP_OVERLAY ebgp-multihop 3
    neighbor SP_OVERLAY send-community extended
    neighbor 10.11.0.101 peer group SP_OVERLAY
@@ -295,6 +306,7 @@ interface Ethernet7
    mtu 9214
    no switchport
    ip address 10.11.101.7/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -304,6 +316,7 @@ interface Ethernet8
    mtu 9214
    no switchport
    ip address 10.11.102.7/31
+   bfd interval 200 min-rx 200 multiplier 3
    ip ospf neighbor bfd
    ip ospf network point-to-point
    ip ospf area 0.0.0.0
@@ -335,6 +348,7 @@ router bgp 65103
    neighbor SPINE_OVERLAY peer group
    neighbor SP_OVERLAY peer group
    neighbor SP_OVERLAY update-source Loopback1
+   neighbor SP_OVERLAY bfd
    neighbor SP_OVERLAY ebgp-multihop 3
    neighbor SP_OVERLAY send-community extended
    neighbor 10.11.0.101 peer group SP_OVERLAY
