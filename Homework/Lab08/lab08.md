@@ -6,7 +6,7 @@
 
 ## Выполнение
 ### Схема сети
-![alt text](images/lab08_routing.png)
+![alt text](images/lab08_routing.PNG)
 
 ### Распределение идентификаторов
 |  Клиент |  Subnet  | IP  | Leaf  | Порт подключения  | VLAN  | VRF | VNI |
