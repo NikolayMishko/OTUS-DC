@@ -590,9 +590,8 @@ VPCS> ping 192.168.0.5
 ```
 
 #### Проверка отказоустойчивости:
-
 **Отключение одного из портов агрегации на Client_Sw**
-
+```
 Client_Sw#show port-channel 1 detailed
 Port Channel Port-Channel1 (Fallback State: Unconfigured):
 Minimum links: unconfigured
@@ -607,9 +606,9 @@ Current weight/Max weight: 1/16
        Port            Time Became Inactive    Reason
     --------------- -------------------------- -----------------------------
        Ethernet1       13:58:52                link down in LACP negotiation
-
+```
 **Момент переключения:**
-
+```
 Client_Sw#
 84 bytes from 192.168.0.5 icmp_seq=50 ttl=64 time=36.653 ms
 84 bytes from 192.168.0.5 icmp_seq=51 ttl=64 time=39.466 ms
@@ -623,9 +622,9 @@ Client_Sw#
 84 bytes from 192.168.0.5 icmp_seq=59 ttl=64 time=22.028 ms
 84 bytes from 192.168.0.5 icmp_seq=60 ttl=64 time=31.356 ms
 
-
+```
 **Активация ранее отключенного порта агрегации.**
-
+```
 Client_Sw#show port-channel detailed
 Port Channel Port-Channel1 (Fallback State: Unconfigured):
 Minimum links: unconfigured
@@ -653,3 +652,4 @@ Client_Sw#
 84 bytes from 192.168.0.5 icmp_seq=163 ttl=64 time=34.779 ms
 84 bytes from 192.168.0.5 icmp_seq=164 ttl=64 time=37.946 ms
 84 bytes from 192.168.0.5 icmp_seq=165 ttl=64 time=24.772 ms
+```
