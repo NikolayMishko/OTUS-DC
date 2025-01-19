@@ -114,6 +114,7 @@ router bgp 65001
    neighbor L_OVERLAY peer group
    neighbor L_OVERLAY next-hop-unchanged
    neighbor L_OVERLAY update-source Loopback1
+   neighbor L_OVERLAY bfd
    neighbor L_OVERLAY ebgp-multihop 3
    neighbor L_OVERLAY send-community extended
    neighbor 10.11.101.0 peer group L_OVERLAY
@@ -189,6 +190,7 @@ router bgp 65001
    neighbor L_OVERLAY peer group
    neighbor L_OVERLAY next-hop-unchanged
    neighbor L_OVERLAY update-source Loopback1
+   neighbor L_OVERLAY bfd
    neighbor L_OVERLAY ebgp-multihop 3
    neighbor L_OVERLAY send-community extended
    neighbor 10.11.101.0 peer group L_OVERLAY
@@ -281,6 +283,7 @@ router bgp 65101
    maximum-paths 4 ecmp 64
    neighbor SP_OVERLAY peer group
    neighbor SP_OVERLAY update-source Loopback1
+   neighbor SP_OVERLAY bfd
    neighbor SP_OVERLAY ebgp-multihop 3
    neighbor SP_OVERLAY send-community extended
    neighbor 10.11.0.101 peer group SP_OVERLAY
@@ -368,6 +371,7 @@ router bgp 65102
    maximum-paths 4 ecmp 64
    neighbor SP_OVERLAY peer group
    neighbor SP_OVERLAY update-source Loopback1
+   neighbor SP_OVERLAY bfd
    neighbor SP_OVERLAY ebgp-multihop 3
    neighbor SP_OVERLAY send-community
    neighbor 10.11.0.101 peer group SP_OVERLAY
@@ -450,6 +454,7 @@ router bgp 65103
    neighbor SPINE_OVERLAY peer group
    neighbor SP_OVERLAY peer group
    neighbor SP_OVERLAY update-source Loopback1
+   neighbor SP_OVERLAY bfd
    neighbor SP_OVERLAY ebgp-multihop 3
    neighbor SP_OVERLAY send-community extended
    neighbor 10.11.0.101 peer group SP_OVERLAY
